@@ -43,9 +43,9 @@ for file in `find ${1} -iname "*.zip" -o -iname "*.rar" -o -iname "*.gz" -o -ina
 			"gz" ) gzip -d ${file} ;;
 			"7z" ) 7z x ${file} -o${file%%.7z} ;;
 			"tar" ) tar -xvf ${file} --directory=${file%%.tar}/ ;;
-        	        "tgz" ) tar -xvf ${file} --directory=${file%%.tgz}/ ;;
-        	        "bz2" ) tar -xvf ${file} --directory=${file%%.bz2}/ ;;
-        	        "xz" ) tar -xvf ${file} --directory=${file%%.xz}/ ;;
+        	        "tgz" ) tar -xzvf ${file} --directory=${file%%.tgz}/ ;;
+        	        "bz2" ) bunzip2 ${file} ;;
+        	        "xz" ) unxz ${file} ;;
 		esac
 	else
                 case "$ext_lc" in
@@ -54,9 +54,9 @@ for file in `find ${1} -iname "*.zip" -o -iname "*.rar" -o -iname "*.gz" -o -ina
                         "gz" ) gzip -d ${file} ;;
                         "7z" ) 7z x ${file} ;;
                         "tar" ) tar -xvf ${file} ;;
-                        "tgz" ) tar -xvf ${file} ;;
-                        "bz2" ) tar -xvf ${file} ;;
-                        "xz" ) tar -xvf ${file} ;;
+                        "tgz" ) tar -xzvf ${file} ;;
+                        "bz2" ) bunzip2 ${file} ;;
+                        "xz" ) unxz ${file} ;;
                 esac
 	fi
 
