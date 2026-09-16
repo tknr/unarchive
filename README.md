@@ -1,4 +1,4 @@
-# unar_centos8
+# unarchive
 
 ## requires
 
@@ -6,7 +6,8 @@ gzip
 p7zip  
 tar  
 unrar  
-unzip  
+unzip
+unxz
 
 ## install
 
